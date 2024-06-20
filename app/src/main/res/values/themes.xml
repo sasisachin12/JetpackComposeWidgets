@@ -13,4 +13,5 @@
         <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
     </style>
+    <style name="Theme.JetPackComposeBasic" parent="android:Theme.Material.Light.NoActionBar" />
 </resources>
