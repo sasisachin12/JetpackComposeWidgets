@@ -21,3 +21,4 @@ dependencyResolutionManagement {
 
 rootProject.name = "JetpackComposeWidgets"
 include(":app")
+include(":app:benchmark")
