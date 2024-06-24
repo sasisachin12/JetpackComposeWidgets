@@ -1,6 +1,8 @@
 package aaa.android.jetpackcomposewidgets.ui.screen
 
 
+import BROWN
+import Purple80
 import aaa.android.jetpackcomposewidgets.theme.JetPackComposeWidgetsTheme
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -44,7 +46,8 @@ fun HomeScreen(navController: NavController) {
                 Text(
                     "Home Screen",
                     style = MaterialTheme.typography.titleLarge,
-                    modifier = Modifier.padding(vertical = 20.dp)
+                    modifier = Modifier.padding(vertical = 30.dp),
+                    color = BROWN
                 )
             }
         }
