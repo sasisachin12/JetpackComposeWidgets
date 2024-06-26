@@ -72,7 +72,8 @@ dependencies {
     val composeBom = platform("androidx.compose:compose-bom:2024.06.00")
     implementation(composeBom)
     androidTestImplementation(composeBom)
-
+    debugImplementation(libs.ui.tooling)
+    implementation(libs.ui.tooling.preview)
 
     implementation("androidx.compose.material3:material3-window-size-class:1.2.1")
     implementation("androidx.compose.material3:material3-adaptive-navigation-suite:1.3.0-beta03")

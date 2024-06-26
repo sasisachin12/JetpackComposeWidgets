@@ -14,6 +14,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 
@@ -26,7 +27,9 @@ fun HomeScreen(navController: NavController) {
             color = MaterialTheme.colorScheme.background
         ) {
             Column(
-                modifier = Modifier.fillMaxSize().padding(15.dp),
+                modifier = Modifier
+                    .fillMaxSize()
+                    .padding(15.dp),
                 horizontalAlignment = Alignment.CenterHorizontally,
                 verticalArrangement = Arrangement.Center
             ) {
@@ -49,7 +52,9 @@ fun HomeScreen(navController: NavController) {
                     modifier = Modifier.padding(vertical = 30.dp),
                     color = BROWN
                 )
+
             }
         }
     }
+
 }

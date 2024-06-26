@@ -5,4 +5,5 @@
     <string name="title_notifications">Notifications</string>
     <string name="profile">Profile</string>
     <string name="friends_list">Friend</string>
+    <string name="app_tagline">welcome\n</string>
 </resources>
