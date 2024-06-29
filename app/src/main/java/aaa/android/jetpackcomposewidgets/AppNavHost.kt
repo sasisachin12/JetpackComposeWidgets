@@ -1,9 +1,11 @@
 package aaa.android.jetpackcomposewidgets
 
 import aaa.android.jetpackcomposewidgets.Destinations.WELCOME_ROUTE
+import aaa.android.jetpackcomposewidgets.ui.screen.WelcomeRoute
 import androidx.compose.runtime.Composable
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
+import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 
 
@@ -21,6 +23,8 @@ fun AppNavHost(navController: NavHostController = rememberNavController()) {
         navController = navController,
         startDestination = WELCOME_ROUTE,
     ) {
-
+        composable(WELCOME_ROUTE) {
+            WelcomeRoute()
+        }
     }
 }
