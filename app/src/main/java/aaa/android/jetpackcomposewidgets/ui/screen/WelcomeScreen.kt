@@ -11,20 +11,29 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.wrapContentHeight
 import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.text.KeyboardActions
+import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.foundation.verticalScroll
+import androidx.compose.material3.Button
 import androidx.compose.material3.LocalContentColor
 import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
 import androidx.compose.runtime.saveable.rememberSaveable
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.focus.FocusDirection
 import androidx.compose.ui.graphics.luminance
+import androidx.compose.ui.platform.LocalFocusManager
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
@@ -70,6 +79,8 @@ private fun Branding(modifier: Modifier = Modifier) {
                 .padding(top = 24.dp)
                 .fillMaxWidth()
         )
+        SimpleOutlinedTextFieldSample()
+        FilledButtonExample(onClick = {})
     }
 }
 
@@ -97,5 +108,35 @@ private fun Logo(
 fun WelcomeScreenPreview() {
     JetPackComposeWidgetsTheme {
         WelcomeScreen()
+    }
+}
+
+@Composable
+fun SimpleOutlinedTextFieldSample() {
+    var text by remember { mutableStateOf("") }
+    val focusManager = LocalFocusManager.current
+    OutlinedTextField(
+        value = text,
+        onValueChange = { text = it },
+        label = { Text("Label") },
+        keyboardOptions = KeyboardOptions(imeAction = ImeAction.Done),
+        keyboardActions = KeyboardActions(onNext = {
+            if (!focusManager.moveFocus(FocusDirection.Down))
+                focusManager.clearFocus()
+        }),
+        singleLine = true
+    )
+}
+
+@Composable
+fun FilledButtonExample(onClick: () -> Unit) {
+    Button(onClick = { onClick() }) {
+        Text("Screen 1")
+    }
+    Button(onClick = { onClick() }) {
+        Text("Screen 2")
+    }
+    Button(onClick = { onClick() }) {
+        Text("Screen 3")
     }
 }
