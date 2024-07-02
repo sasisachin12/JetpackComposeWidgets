@@ -39,7 +39,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 
 @Composable
-fun ScreenOne() {
+fun ScreenTwo() {
     val showBranding by rememberSaveable { mutableStateOf(true) }
 
     Scaffold(modifier = Modifier) { innerPadding ->
@@ -79,8 +79,8 @@ private fun Branding(modifier: Modifier = Modifier) {
                 .padding(top = 24.dp)
                 .fillMaxWidth()
         )
-        TextFieldSample()
-        ButtonExample(onClick = {})
+        TextFieldSampleTwo()
+        ButtonExampleTwo(onClick = {})
     }
 }
 
@@ -105,14 +105,14 @@ private fun Logo(
 @Preview(name = "Welcome light theme", uiMode = UI_MODE_NIGHT_YES)
 @Preview(name = "Welcome dark theme", uiMode = UI_MODE_NIGHT_NO)
 @Composable
-fun ScreenOnePreview() {
+fun ScreenTwoPreview() {
     JetPackComposeWidgetsTheme {
-        ScreenOne()
+        ScreenTwo()
     }
 }
 
 @Composable
-fun TextFieldSample() {
+fun TextFieldSampleTwo() {
     var text by remember { mutableStateOf("") }
     val focusManager = LocalFocusManager.current
     OutlinedTextField(
@@ -129,7 +129,7 @@ fun TextFieldSample() {
 }
 
 @Composable
-fun ButtonExample(onClick: () -> Unit) {
+fun ButtonExampleTwo(onClick: () -> Unit) {
     Button(onClick = { onClick() }) {
         Text("Screen 1")
     }
