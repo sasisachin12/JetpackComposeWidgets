@@ -1,5 +1,6 @@
 package aaa.android.jetpackcomposewidgets
 
+import aaa.android.jetpackcomposewidgets.Destinations.WELCOME_ROUTE
 import aaa.android.jetpackcomposewidgets.theme.JetPackComposeWidgetsTheme
 import aaa.android.jetpackcomposewidgets.ui.navigation.BottomNavigationBar
 import android.os.Bundle
@@ -21,7 +22,7 @@ class MainActivity : ComponentActivity() {
                     color = MaterialTheme.colorScheme.background
                 ) {
                    // BottomNavigationBar()
-                    AppNavHost()
+                    AppNavHost(destination = WELCOME_ROUTE)
                 }
 
             }

@@ -1,6 +1,7 @@
 package aaa.android.jetpackcomposewidgets
 
 import aaa.android.jetpackcomposewidgets.Destinations.WELCOME_ROUTE
+import aaa.android.jetpackcomposewidgets.ui.screen.ProfileRoute
 import aaa.android.jetpackcomposewidgets.ui.screen.WelcomeRoute
 import androidx.compose.runtime.Composable
 import androidx.navigation.NavHostController
@@ -18,13 +19,20 @@ object Destinations {
 }
 
 @Composable
-fun AppNavHost(navController: NavHostController = rememberNavController()) {
+fun AppNavHost(navController: NavHostController = rememberNavController(),destination:String) {
     NavHost(
         navController = navController,
-        startDestination = WELCOME_ROUTE,
+        startDestination = destination,
     ) {
         composable(WELCOME_ROUTE) {
-            WelcomeRoute()
+            ProfileRoute(navController)
         }
+        /*composable(WELCOME_ROUTE) {
+            ProfileRoute(navController)
+        }
+        composable(WELCOME_ROUTE) {
+            WelcomeRoute()
+        }*/
+
     }
 }
