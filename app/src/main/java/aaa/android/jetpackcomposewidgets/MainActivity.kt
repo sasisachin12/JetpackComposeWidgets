@@ -21,7 +21,7 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                   // BottomNavigationBar()
+
                     AppNavHost(destination = WELCOME_ROUTE)
                 }
 

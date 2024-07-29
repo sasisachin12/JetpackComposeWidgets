@@ -37,9 +37,11 @@ import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.navigation.NavHostController
+import androidx.navigation.compose.rememberNavController
 
 @Composable
-fun ScreenOne() {
+fun ScreenOne(navController: NavHostController) {
     val showBranding by rememberSaveable { mutableStateOf(true) }
 
     Scaffold(modifier = Modifier) { innerPadding ->
@@ -106,8 +108,9 @@ private fun Logo(
 @Preview(name = "Welcome dark theme", uiMode = UI_MODE_NIGHT_NO)
 @Composable
 fun ScreenOnePreview() {
+    val navController: NavHostController = rememberNavController()
     JetPackComposeWidgetsTheme {
-        ScreenOne()
+        ScreenOne(navController)
     }
 }
 
@@ -118,7 +121,7 @@ fun TextFieldSample() {
     OutlinedTextField(
         value = text,
         onValueChange = { text = it },
-        label = { Text("Label") },
+        label = { Text("reached screen One") },
         keyboardOptions = KeyboardOptions(imeAction = ImeAction.Done),
         keyboardActions = KeyboardActions(onNext = {
             if (!focusManager.moveFocus(FocusDirection.Down))

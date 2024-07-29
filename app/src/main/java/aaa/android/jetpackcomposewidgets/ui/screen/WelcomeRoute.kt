@@ -12,3 +12,8 @@ fun WelcomeRoute() {
 fun ProfileRoute(navController: NavHostController) {
     ProfileScreen(navController)
 }
+
+@Composable
+fun ScreenOneRoute(navController: NavHostController) {
+    ScreenOne(navController)
+}

@@ -1,9 +1,11 @@
 package aaa.android.jetpackcomposewidgets.ui.screen
 
+import aaa.android.jetpackcomposewidgets.Destinations.SCREEN_ONE
 import aaa.android.jetpackcomposewidgets.theme.JetPackComposeWidgetsTheme
 import androidx.compose.foundation.layout.*
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.ArrowBack
+import androidx.compose.material3.Button
 import androidx.compose.material3.CenterAlignedTopAppBar
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
@@ -69,11 +71,9 @@ fun ProfileScreen(navController: NavController) {
                              contentScale = ContentScale.Crop
                          )
                      }*/
-                    Text(
-                        "Profile Screen",
-                        style = MaterialTheme.typography.titleLarge,
-                        modifier = Modifier.padding(vertical = 20.dp)
-                    )
+                    Button(onClick = { navController.navigate(SCREEN_ONE) }) {
+                        Text("Navigate Screen One")
+                    }
                 }
             }
         }
@@ -81,3 +81,4 @@ fun ProfileScreen(navController: NavController) {
 
     }
 }
+
